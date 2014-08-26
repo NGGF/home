@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+    <tlib-version>2.2.3</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>df</short-name>
+    <uri>/DateFormat</uri>
+    <display-name>"DateFormat Tags"</display-name>
+    <description><![CDATA["DateFormat"]]></description>
+    <tag>
+        <name>DateFormat</name>
+        <tag-class>gov.nii.imm.chq.taglib.DateFormatTag</tag-class>
+        <body-content>JSP</body-content>
+        <description><![CDATA[format a date String]]></description>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description><![CDATA[the format String]]></description>
+        </attribute>
+        <attribute>
+            <name>inPattern</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description><![CDATA[the input String pattern]]></description>
+        </attribute>        
+        <attribute>
+            <name>outPattern</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>
+                <![CDATA[the output String pattern default is yyyy/MM/dd]]></description>
+        </attribute>        
+    </tag>
+    
+    <tag>
+    	<name>valueConverter</name>
+    	<tag-class>gov.nii.common.tag.ValueConverterTag</tag-class>
+    	<body-content>JSP</body-content>
+    	<description><![CDATA[Convert the value to another type.]]></description>
+    	<attribute>
+    		<name>value</name>
+    		<required>true</required>
+    		<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+    	</attribute>
+    	<attribute>
+    		<name>type</name>
+    		<required>true</required>
+    		<type>java.lang.String</type>
+    	</attribute>    	
+    </tag>
+</taglib>

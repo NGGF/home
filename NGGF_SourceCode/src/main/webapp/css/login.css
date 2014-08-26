@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------------------css reset start*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li, form, label,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;	
+	border:none;
+	outline:0;	
+	font:normal normal 100%/120%;
+	text-align:left;
+	vertical-align:baseline;
+}
+
+/* remember to define focus styles! */
+
+ol, ul, li, dt, dd{
+	list-style:none;
+}
+body{
+	color: #333;
+	margin:0 ;
+	padding:0;
+	text-align:center;
+	background: #fff url(../images/bg.jpg) repeat-x 0px 0px;
+	font: 0.8em/1.6em Verdana, Geneva, sans-serif;
+}
+.login{
+	margin:38px auto 0 auto;
+	padding:0;
+	text-align:left;
+	width:958px;
+	height: 510px;
+/* 	background: url(../images/layout_bg.jpg) no-repeat 0px 0px; */
+	
+}
+.login h2{
+	font-size:1.5em;
+	color:#06C; margin:0;
+	font-weight: bold;
+	padding:220px 0 0 400px;
+}
+form{ margin:0; padding:0;}
+.form_admin{
+	margin:15px 0 0 350px;
+	text-align:left;
+	color:#333;
+	width:350px;
+	font-size:1.2em;
+}
+.form_admin label{ margin:0 0 0 0px;}
+.form_admin input{border:2px solid #54b7eb; color:#06C; margin: 0 0 5px 0; vertical-align:middle; height:24px; width:160px;}
+
+
+.form_admin .btn_login, .form_admin .btn_login2{
+	background: url(../images/btn_loginbg.gif) repeat-x 0px 0px;
+	padding:0px 0px 0 0px;
+	margin:0 0 0 50px;
+	height:28px;
+	width:60px;
+	font-weight:bold;
+	border:0; color:#FFF; 
+	text-align:center;
+	border:1px solid #115ead;
+}
+.form_admin .btn_login2 {background: url(../images/btn_loginbg2.gif)  repeat-x 0px 0px; border:1px solid #888; margin:0 0 0 5px;}
+.footer{width:780px; text-align:center;  margin:0 auto;  color:#666; }

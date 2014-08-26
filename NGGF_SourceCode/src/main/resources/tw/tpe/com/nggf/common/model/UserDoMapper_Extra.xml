@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="user" >
+  <select id="selectByUserNameLike" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where userName like #{userName,jdbcType=VARCHAR}
+    and delFlag = '0'
+  </select>
+  <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where userName = #{userName,jdbcType=VARCHAR}
+    and delFlag = '0'
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where delFlag = '0'
+    order by userId asc
+  </select>
+  <select id="selectUserType1Count" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select 
+    count(*)
+    from user
+    where userName like #{userName,jdbcType=VARCHAR}
+    and userType = '1'
+    and delFlag = '0'
+  </select>
+  <select id="selectUserType1Count_all" resultType="java.lang.Integer">
+    select 
+    count(*)
+    from user
+    where userType = '1'
+    and delFlag = '0'
+  </select>
+</mapper>

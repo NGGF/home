@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="generals" >
+  <resultMap id="BaseResultMap" type="tw.tpe.com.nggf.common.model.dataobject.GeneralsDo" >
+    <id column="generalsId" property="generalsId" jdbcType="VARCHAR" />
+    <result column="generalsName" property="generalsName" jdbcType="VARCHAR" />
+    <result column="makeCost" property="makeCost" jdbcType="DECIMAL" />
+    <result column="makeDate" property="makeDate" jdbcType="TIMESTAMP" />
+    <result column="generalsDesc" property="generalsDesc" jdbcType="VARCHAR" />
+    <result column="photoUrl" property="photoUrl" jdbcType="VARCHAR" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="creatorIp" property="creatorIp" jdbcType="VARCHAR" />
+    <result column="maintainer" property="maintainer" jdbcType="VARCHAR" />
+    <result column="maintainDate" property="maintainDate" jdbcType="TIMESTAMP" />
+    <result column="maintainIp" property="maintainIp" jdbcType="VARCHAR" />
+    <result column="delFlag" property="delFlag" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    generalsId, generalsName, makeCost, makeDate, generalsDesc, photoUrl, creator, createDate, 
+    creatorIp, maintainer, maintainDate, maintainIp, delFlag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from generals
+    where generalsId = #{generalsId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from generals
+    where generalsId = #{generalsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="tw.tpe.com.nggf.common.model.dataobject.GeneralsDo" >
+    insert into generals (generalsId, generalsName, makeCost, 
+      makeDate, generalsDesc, photoUrl, 
+      creator, createDate, creatorIp, 
+      maintainer, maintainDate, maintainIp, 
+      delFlag)
+    values (#{generalsId,jdbcType=VARCHAR}, #{generalsName,jdbcType=VARCHAR}, #{makeCost,jdbcType=DECIMAL}, 
+      #{makeDate,jdbcType=TIMESTAMP}, #{generalsDesc,jdbcType=VARCHAR}, #{photoUrl,jdbcType=VARCHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{creatorIp,jdbcType=VARCHAR}, 
+      #{maintainer,jdbcType=VARCHAR}, #{maintainDate,jdbcType=TIMESTAMP}, #{maintainIp,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="tw.tpe.com.nggf.common.model.dataobject.GeneralsDo" >
+    insert into generals
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="generalsId != null" >
+        generalsId,
+      </if>
+      <if test="generalsName != null" >
+        generalsName,
+      </if>
+      <if test="makeCost != null" >
+        makeCost,
+      </if>
+      <if test="makeDate != null" >
+        makeDate,
+      </if>
+      <if test="generalsDesc != null" >
+        generalsDesc,
+      </if>
+      <if test="photoUrl != null" >
+        photoUrl,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="createDate != null" >
+        createDate,
+      </if>
+      <if test="creatorIp != null" >
+        creatorIp,
+      </if>
+      <if test="maintainer != null" >
+        maintainer,
+      </if>
+      <if test="maintainDate != null" >
+        maintainDate,
+      </if>
+      <if test="maintainIp != null" >
+        maintainIp,
+      </if>
+      <if test="delFlag != null" >
+        delFlag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="generalsId != null" >
+        #{generalsId,jdbcType=VARCHAR},
+      </if>
+      <if test="generalsName != null" >
+        #{generalsName,jdbcType=VARCHAR},
+      </if>
+      <if test="makeCost != null" >
+        #{makeCost,jdbcType=DECIMAL},
+      </if>
+      <if test="makeDate != null" >
+        #{makeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="generalsDesc != null" >
+        #{generalsDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null" >
+        #{photoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorIp != null" >
+        #{creatorIp,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainer != null" >
+        #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainDate != null" >
+        #{maintainDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainIp != null" >
+        #{maintainIp,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="tw.tpe.com.nggf.common.model.dataobject.GeneralsDo" >
+    update generals
+    <set >
+      <if test="generalsName != null" >
+        generalsName = #{generalsName,jdbcType=VARCHAR},
+      </if>
+      <if test="makeCost != null" >
+        makeCost = #{makeCost,jdbcType=DECIMAL},
+      </if>
+      <if test="makeDate != null" >
+        makeDate = #{makeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="generalsDesc != null" >
+        generalsDesc = #{generalsDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null" >
+        photoUrl = #{photoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorIp != null" >
+        creatorIp = #{creatorIp,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainer != null" >
+        maintainer = #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainDate != null" >
+        maintainDate = #{maintainDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainIp != null" >
+        maintainIp = #{maintainIp,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        delFlag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where generalsId = #{generalsId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="tw.tpe.com.nggf.common.model.dataobject.GeneralsDo" >
+    update generals
+    set generalsName = #{generalsName,jdbcType=VARCHAR},
+      makeCost = #{makeCost,jdbcType=DECIMAL},
+      makeDate = #{makeDate,jdbcType=TIMESTAMP},
+      generalsDesc = #{generalsDesc,jdbcType=VARCHAR},
+      photoUrl = #{photoUrl,jdbcType=VARCHAR},
+      creator = #{creator,jdbcType=VARCHAR},
+      createDate = #{createDate,jdbcType=TIMESTAMP},
+      creatorIp = #{creatorIp,jdbcType=VARCHAR},
+      maintainer = #{maintainer,jdbcType=VARCHAR},
+      maintainDate = #{maintainDate,jdbcType=TIMESTAMP},
+      maintainIp = #{maintainIp,jdbcType=VARCHAR},
+      delFlag = #{delFlag,jdbcType=VARCHAR}
+    where generalsId = #{generalsId,jdbcType=VARCHAR}
+  </update>
+</mapper>

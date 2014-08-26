@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="User" namespace="/User" extends="default">
+        <action name="UserAdd" class="tw.tpe.com.nggf.user.action.UserAction">
+            <result type="tiles" name="success">userAdd</result>
+        </action>
+        <action name="UserQuery" class="tw.tpe.com.nggf.user.action.UserQueryAction">
+            <result type="tiles" name="userQuery">userQuery</result>
+            <result type="tiles" name="userQueryList">userQueryList</result>
+            <result type="tiles" name="userQueryView">userQueryView</result>
+        </action>
+        <action name="UserEdit" class="tw.tpe.com.nggf.user.action.UserEditAction">
+            <result type="tiles" name="userEdit">userEdit</result>
+            <result type="tiles" name="userQuery">userQuery</result>
+        </action>
+    </package>
+</struts>

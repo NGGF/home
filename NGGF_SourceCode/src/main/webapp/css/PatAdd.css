@@ -1,0 +1,77 @@
+font{
+	color:red;
+	position:relative;
+	top:3px
+}
+
+/*function key的位子*/
+.test{
+margin-top:110px;
+position: relative;
+left:280px
+}
+
+/*button改成金色背景*/
+.btnbg{
+    background: url("../images/btn_submit.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #BBBBBB;
+    color: #000000;
+    cursor: pointer;
+    margin: 0 2px;
+    padding: 5px 10px
+}
+
+/*layout*/
+.layout .leftbg {
+  width: 175px;
+  height:450px;
+  vertical-align: top;
+  text-align: left;
+  background-color:#eee;
+  padding: 10px 0px 0px 0px;
+  border-right:1px solid #ddd;
+}
+
+/*增加日期樣式*/
+.inputDate{
+    border: 1px solid #B0AA96;
+    color: #6C6D03;
+    font-size: 1em;
+    height: 16px;
+    margin: 0 0 0;
+    padding: 4px 0 2px 4px;
+    text-align: left;
+    width: auto;	
+}
+
+/*表格置中對齊*/
+.tablePrint{
+    border-collapse: collapse;
+    border-color: #E2DDCC #E2DDCC -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    clear: both;
+    line-height: 165%;
+    margin: 40px 0 20px 250px;
+    padding: 0;
+    width: 40%;
+}
+.tablePrint th{
+    background: none repeat scroll 0 0 #F5F4E3;
+    border-top: 1px solid #E2DDCC;
+    border-left: 1px solid #E2DDCC;
+    border-bottom: 1px solid #E2DDCC;    
+    color: #000000;
+    font-weight: normal;
+    padding: 4px;
+    text-align: right;
+    white-space: nowrap;
+    width: 20%;  
+}
+.tablePrint td{
+    border-top: 1px solid #E2DDCC;	
+    border-bottom: 1px solid #E2DDCC;
+    border-right: 1px solid #E2DDCC;
+    padding: 4px;
+    vertical-align: top;
+}

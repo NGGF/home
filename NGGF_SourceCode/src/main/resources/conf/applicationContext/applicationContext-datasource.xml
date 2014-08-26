@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        http://www.springframework.org/schema/jee 
+        http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+    
+    <!-- DataSource -->
+   <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+<!-- 		<property name="driverClass" value="net.sf.log4jdbc.DriverSpy" /> -->
+<!-- 		<property name="jdbcUrl" value="jdbc:log4jdbc:mysql://localhost/NGGF" /> -->
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost/NGGF" />
+		<property name="user" value="root" />
+		<property name="password" value="1234" />
+		<property name="minPoolSize" value="3" />
+		<property name="maxPoolSize" value="20" />
+		<property name="initialPoolSize" value="20" />
+		<property name="acquireIncrement" value="1" />
+		<property name="maxIdleTime" value="300" />
+		<property name="maxStatements" value="0" />
+		<property name="idleConnectionTestPeriod" value="300" />
+		<property name="acquireRetryAttempts" value="30" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="testConnectionOnCheckout" value="false" />
+	</bean>
+        
+<!--    class="org.springframework.jdbc.datasource.DriverManagerDataSource" -->
+<!--         destroy-method="close" p:driverClassName="${driverClassName}" p:url="${url}" -->
+<!--         p:username="${username}" p:password="${password}" /> -->
+    
+    <!-- SqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+        p:dataSource-ref="dataSource" p:mapperLocations="classpath*:tw/tpe/com/nggf/common/model/*.xml">
+    </bean>
+    
+    <!-- Dao -->
+    <bean id="sqlSessionDao" class="tw.tpe.com.nggf.common.model.impl.SqlSessionDaoImpl"
+        p:sqlSessionFactory-ref="sqlSessionFactory" />
+    
+    <!-- LoggingDao -->
+    <bean id="LoggingDao" class="tw.tpe.com.nggf.common.model.impl.LoggingDaoImpl"
+        p:sqlSessionFactory-ref="sqlSessionFactory" />
+        
+    <!-- TransactionManager -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+        p:dataSource-ref="dataSource" />
+    <!-- <bean id="transactionManager" class="org.springframework.transaction.jta.WebLogicJtaTransactionManager" /> -->
+</beans>

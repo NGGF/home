@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+.form .rowTb th,.form .colTb th { 
+	/* 將字體改成藍色 
+	   Carl 2012/04/03 */
+	/* color: #000; */
+	color: #0000ff;
+	
+	/* 將框線顏色加深
+	   Carl 2012/04/03 */
+	/* rowTb
+	   border-bottom: 1px solid #e2ddcc;
+	   border-right: 1px solid #e2ddcc;
+	   colTb
+	   border-bottom: 1px solid #b4c5c6;
+	   border-right: 1px solid #b4c5c6; */
+	border: 1px solid #a29d8c;
+	
+	/* 將背景改為淺藍色
+	   Carl 2012/04/03 */
+	/* rowTb
+	   background: #f5f4e3;
+	   colTb
+	   background: #d5dedf; */
+	background: #c5e4f3;
+}
+
+.form .rowTb td,.form .colTb td {
+
+	/* 將框線顏色加深
+	   Carl 2012/04/03 */
+	/* rowTb
+	   border-bottom: 1px solid #e2ddcc;
+	   border-right: 1px solid #e2ddcc;
+	   colTb
+	   border-bottom: 1px solid #b4c5c6;
+	   border-right: 1px solid #b4c5c6;
+	   */
+	border: 1px solid #a29d8c;
+}
+
+.form .colTb th { 
+	/* 將字體對中
+	   Carl 2012/04/03 */
+	/* text-align:left; */
+	text-align: center;
+}
+
+.btnbg { 
+	/* 將字體改為磚紅色
+	   Carl 2012/04/03 */
+	/* color: #000000; */
+	color: #cc0000;
+}
+
+input[readOnly] {
+	background-color: #ddd;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!-- imm.classic -->
+	<definition name="imm.classic" template="/pages/layouts/classic.jsp">
+		<put-attribute name="title" value="NGGF" />
+		<put-attribute name="header" value="/pages/tiles/banner.jsp" />
+		<put-attribute name="menu" value="/pages/tiles/common_menu.jsp" />
+		<put-attribute name="body" value="/pages/tiles/home_body.jsp" />
+		<put-attribute name="footer" value="/pages/tiles/credits.jsp" />
+	</definition>
+
+	<definition name="login" extends="imm.classic">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/login.jsp" />
+	</definition>
+
+	<definition name="index" extends="imm.classic">
+		<put-attribute name="header" value="/pages/tiles/banner.jsp" />
+		<put-attribute name="body" value="/pages/index.jsp" />
+	</definition>
+
+	<definition name="error" extends="imm.classic">
+		<put-attribute name="body" value="/pages/error.jsp" />
+	</definition>
+	<definition name="godGeneralsAdd" extends="imm.classic">
+		<put-attribute name="body" value="/pages/godGenerals/godGeneralsAdd.jsp" />
+	</definition>
+	<definition name="activityAdd" extends="imm.classic">
+		<put-attribute name="body" value="/pages/activity/activityAdd.jsp" />
+	</definition>
+	<definition name="noteCard" extends="imm.classic">
+		<put-attribute name="body" value="/pages/activity/noteCard.jsp" />
+	</definition>
+</tiles-definitions>

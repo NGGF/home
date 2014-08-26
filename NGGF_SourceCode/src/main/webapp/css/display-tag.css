@@ -1,0 +1,194 @@
+@CHARSET "UTF-8";
+
+/* displayTab css*/
+.displayTag {
+	font-size: 1em;
+	font-family: "新細明體", Verdana, Geneva, Arial, Helvetica, sans-serif;
+	border: 1px solid #acbaff;
+	background-color: #b5dafd;
+	border-collapse: collapse;
+	width: 99%;
+	padding: 4px;
+	margin-left: 1px;
+	line-height:18px;
+}
+
+table.displayTag thead tr td,
+table.displayTag tbody tr td,
+table.displayTag tfoot tr td{
+	padding:5px;
+	height: 30px;
+}
+
+table.displayTag tbody tr td{
+	border-top:1px solid #acbaff;
+	border-bottom:1px solid #acbaff;
+}
+
+table.displayTag thead tr th {
+	padding: 4px;
+	font-weight: normal;
+	white-space:nowrap;
+	color: #FFF;
+	text-align:left;
+	border-bottom: 1px solid #b4c5c6;
+	border-right: 1px solid #ccc;
+	background:  #086A87;
+}
+
+
+table.displayTag tfoot tr th,
+table.displayTag tfoot tr td {
+	padding-left: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: left;
+	background-color: #e0edf1;
+	color: #0869B0;
+}
+
+table.displayTag tbody tr td input[type="button"],
+table.displayTag tbody tr td input[type="submit"] {
+	background: url(../images/btn_submit.gif) repeat-x 0 0;	
+	border:1px solid #A9843F;	
+	color: #00F;
+	cursor:pointer;
+	margin:0 2px;
+	padding:4px 10px;
+}
+
+/*table.displayTag tbody tr td input {
+	text-align: center;
+	valign: baseline;
+	font-weight: bold;
+	text-decoration: none;
+}*/
+
+table.displayTag tbody tr.odd {
+	background-color: #ffffff;
+	text-align: left;
+}
+
+table.displayTag tbody tr.even {
+	background-color: #E0F2F7;
+	text-align: left;
+}
+
+
+/* 主要table規格,所有table的th共同元素 */
+.main_table {
+	line-height:1.5em;
+	border-collapse: collapse;
+	color: #000000;
+	margin-left: 1px;
+	border: 1px solid #fff;
+}
+
+.main_table textarea {
+	line-height:1.5em;
+	font-size: 13px;
+	font-family: "新細明體", Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.main_table td span{
+	line-height:1.5em;
+}
+
+.main_table th{
+	line-height:1.5em;
+}
+.main_table thead tr th,.main_table tr th {
+	margin: 0px;
+	padding: 5px;
+	height: 33px;
+	color: #000000;
+	letter-spacing: 1px;
+	text-align: left;
+	border: 1px solid #fff;
+}
+
+.main_table tr td {
+
+	border: 1px solid #fff;
+	padding: 2px 10px 2px 10px;
+	color: #000000;
+	text-align: left;
+}
+
+.main_table tr td.title {
+	color: #000;
+	line-height: 20px;
+	text-decoration: none;
+	background: #daebed;
+}
+
+.main_table tr td.title2 {
+	background: #6496fb;
+}
+
+.main_table tr td.title3 {
+	background-color: #6496fb;
+	color: #000000;
+	font-size: 15px;
+	text-align: center;
+}
+
+.main_table tr td.title4 {
+	padding-left: 5px;
+	background-color: #89c0c7;
+	color: #000000;
+	font-size: 15px;
+}
+
+/*
+藍色頁籤-表格淺藍,table的class=main_table main_table_bgBlue
+tag1
+*/
+.main_table_bgBlue {
+	background-color: #eff1f1;
+	border: 1px solid #99ccff;
+}
+
+.main_table_bgBlue tr th,
+.main_table_bgBlue thead tr th,
+.main_table_bgBlue tbody tr th,
+.main_table_bgBlue tfoot tr th
+	{
+	background-color: #daebed;
+	border: 1px solid #99ccff;
+}
+
+.main_table_bgBlue tr td,
+.main_table_bgBlue tbody tr td,
+.main_table_bgBlue thead tr td,
+.main_table_bgBlue tfoot tr td
+	{
+	border: 1px solid #99ccff;
+}
+
+.main_table_bgBlue tr td.titleBlue {
+	font-weight: bold;
+	background-color: #99cccc;
+	border: 1px solid #99ccff;
+	padding: 5px 10px 5px 10px;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.main_table_bgBlue tr td.listBlue {
+	text-align: center;
+	padding: 5px;
+	line-height: 20px;
+	letter-spacing: 1px;
+	background-color: #99cccc;
+}
+
+.function_title {
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 3px;	
+	font-size: 20px;
+	font-family: "新細明體", Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #08088A;
+	line-height: 60px;
+}

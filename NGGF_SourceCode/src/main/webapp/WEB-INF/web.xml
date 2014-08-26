@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_9" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>NGGF</display-name>
+	<!-- spring start -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:conf/applicationContext/applicationContext.xml
+		</param-value>
+	</context-param>
+	<!-- spring end -->
+
+	<!-- log4j start -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>
+			classpath:tw/tpe/com/nggf/log4j.properties
+		</param-value>
+	</context-param>
+	<!-- log4j end -->
+
+	<!-- tiles start -->
+	<context-param>
+	    <param-name>org.apache.tiles.context.AbstractTilesApplicationContextFactory</param-name>
+	    <param-value>
+	    	org.apache.tiles.servlet.context.wildcard.WildcardServletTilesApplicationContextFactory
+	    </param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+		<param-value>classpath:conf/tiles/tiles.xml,classpath:conf/tiles/*.xml</param-value>
+	</context-param>
+	<!-- tiles end -->
+
+	<!-- struts2 start -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- struts2 end -->
+
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+	</listener>
+</web-app>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="user" >
+  <resultMap id="BaseResultMap" type="tw.tpe.com.nggf.common.model.dataobject.UserDo" >
+    <id column="userId" property="userId" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
+    <result column="userDesc" property="userDesc" jdbcType="VARCHAR" />
+    <result column="photoUrl" property="photoUrl" jdbcType="VARCHAR" />
+    <result column="profession" property="profession" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="personalId" property="personalId" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="fbEMail" property="fbEMail" jdbcType="VARCHAR" />
+    <result column="reserveEmail" property="reserveEmail" jdbcType="VARCHAR" />
+    <result column="telCountry" property="telCountry" jdbcType="VARCHAR" />
+    <result column="telArea" property="telArea" jdbcType="VARCHAR" />
+    <result column="telNo" property="telNo" jdbcType="VARCHAR" />
+    <result column="telExt" property="telExt" jdbcType="VARCHAR" />
+    <result column="addrCity" property="addrCity" jdbcType="VARCHAR" />
+    <result column="addrArea" property="addrArea" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="addrZip" property="addrZip" jdbcType="VARCHAR" />
+    <result column="mobilePhone" property="mobilePhone" jdbcType="VARCHAR" />
+    <result column="underwearSize" property="underwearSize" jdbcType="VARCHAR" />
+    <result column="shoesSize" property="shoesSize" jdbcType="VARCHAR" />
+    <result column="bootsSize" property="bootsSize" jdbcType="VARCHAR" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="creatorIp" property="creatorIp" jdbcType="VARCHAR" />
+    <result column="maintainer" property="maintainer" jdbcType="VARCHAR" />
+    <result column="maintainDate" property="maintainDate" jdbcType="TIMESTAMP" />
+    <result column="maintainIp" property="maintainIp" jdbcType="VARCHAR" />
+    <result column="userType" property="userType" jdbcType="VARCHAR" />
+    <result column="delFlag" property="delFlag" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    userId, userName, userDesc, photoUrl, profession, nickname, personalId, birthday, 
+    gender, fbEMail, reserveEmail, telCountry, telArea, telNo, telExt, addrCity, addrArea, 
+    address, addrZip, mobilePhone, underwearSize, shoesSize, bootsSize, creator, createDate, 
+    creatorIp, maintainer, maintainDate, maintainIp, userType, delFlag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where userId = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from user
+    where userId = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="tw.tpe.com.nggf.common.model.dataobject.UserDo" >
+    insert into user (userId, userName, userDesc, 
+      photoUrl, profession, nickname, 
+      personalId, birthday, gender, 
+      fbEMail, reserveEmail, telCountry, 
+      telArea, telNo, telExt, 
+      addrCity, addrArea, address, 
+      addrZip, mobilePhone, underwearSize, 
+      shoesSize, bootsSize, creator, 
+      createDate, creatorIp, maintainer, 
+      maintainDate, maintainIp, userType, 
+      delFlag)
+    values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userDesc,jdbcType=VARCHAR}, 
+      #{photoUrl,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{personalId,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, #{gender,jdbcType=VARCHAR}, 
+      #{fbEMail,jdbcType=VARCHAR}, #{reserveEmail,jdbcType=VARCHAR}, #{telCountry,jdbcType=VARCHAR}, 
+      #{telArea,jdbcType=VARCHAR}, #{telNo,jdbcType=VARCHAR}, #{telExt,jdbcType=VARCHAR}, 
+      #{addrCity,jdbcType=VARCHAR}, #{addrArea,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{addrZip,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, #{underwearSize,jdbcType=VARCHAR}, 
+      #{shoesSize,jdbcType=VARCHAR}, #{bootsSize,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{creatorIp,jdbcType=VARCHAR}, #{maintainer,jdbcType=VARCHAR}, 
+      #{maintainDate,jdbcType=TIMESTAMP}, #{maintainIp,jdbcType=VARCHAR}, #{userType,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="tw.tpe.com.nggf.common.model.dataobject.UserDo" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        userId,
+      </if>
+      <if test="userName != null" >
+        userName,
+      </if>
+      <if test="userDesc != null" >
+        userDesc,
+      </if>
+      <if test="photoUrl != null" >
+        photoUrl,
+      </if>
+      <if test="profession != null" >
+        profession,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="personalId != null" >
+        personalId,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="fbEMail != null" >
+        fbEMail,
+      </if>
+      <if test="reserveEmail != null" >
+        reserveEmail,
+      </if>
+      <if test="telCountry != null" >
+        telCountry,
+      </if>
+      <if test="telArea != null" >
+        telArea,
+      </if>
+      <if test="telNo != null" >
+        telNo,
+      </if>
+      <if test="telExt != null" >
+        telExt,
+      </if>
+      <if test="addrCity != null" >
+        addrCity,
+      </if>
+      <if test="addrArea != null" >
+        addrArea,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="addrZip != null" >
+        addrZip,
+      </if>
+      <if test="mobilePhone != null" >
+        mobilePhone,
+      </if>
+      <if test="underwearSize != null" >
+        underwearSize,
+      </if>
+      <if test="shoesSize != null" >
+        shoesSize,
+      </if>
+      <if test="bootsSize != null" >
+        bootsSize,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="createDate != null" >
+        createDate,
+      </if>
+      <if test="creatorIp != null" >
+        creatorIp,
+      </if>
+      <if test="maintainer != null" >
+        maintainer,
+      </if>
+      <if test="maintainDate != null" >
+        maintainDate,
+      </if>
+      <if test="maintainIp != null" >
+        maintainIp,
+      </if>
+      <if test="userType != null" >
+        userType,
+      </if>
+      <if test="delFlag != null" >
+        delFlag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userDesc != null" >
+        #{userDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null" >
+        #{photoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null" >
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="personalId != null" >
+        #{personalId,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="fbEMail != null" >
+        #{fbEMail,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveEmail != null" >
+        #{reserveEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="telCountry != null" >
+        #{telCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="telArea != null" >
+        #{telArea,jdbcType=VARCHAR},
+      </if>
+      <if test="telNo != null" >
+        #{telNo,jdbcType=VARCHAR},
+      </if>
+      <if test="telExt != null" >
+        #{telExt,jdbcType=VARCHAR},
+      </if>
+      <if test="addrCity != null" >
+        #{addrCity,jdbcType=VARCHAR},
+      </if>
+      <if test="addrArea != null" >
+        #{addrArea,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="addrZip != null" >
+        #{addrZip,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null" >
+        #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="underwearSize != null" >
+        #{underwearSize,jdbcType=VARCHAR},
+      </if>
+      <if test="shoesSize != null" >
+        #{shoesSize,jdbcType=VARCHAR},
+      </if>
+      <if test="bootsSize != null" >
+        #{bootsSize,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorIp != null" >
+        #{creatorIp,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainer != null" >
+        #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainDate != null" >
+        #{maintainDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainIp != null" >
+        #{maintainIp,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="tw.tpe.com.nggf.common.model.dataobject.UserDo" >
+    update user
+    <set >
+      <if test="userName != null" >
+        userName = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userDesc != null" >
+        userDesc = #{userDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="photoUrl != null" >
+        photoUrl = #{photoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null" >
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="personalId != null" >
+        personalId = #{personalId,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="fbEMail != null" >
+        fbEMail = #{fbEMail,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveEmail != null" >
+        reserveEmail = #{reserveEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="telCountry != null" >
+        telCountry = #{telCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="telArea != null" >
+        telArea = #{telArea,jdbcType=VARCHAR},
+      </if>
+      <if test="telNo != null" >
+        telNo = #{telNo,jdbcType=VARCHAR},
+      </if>
+      <if test="telExt != null" >
+        telExt = #{telExt,jdbcType=VARCHAR},
+      </if>
+      <if test="addrCity != null" >
+        addrCity = #{addrCity,jdbcType=VARCHAR},
+      </if>
+      <if test="addrArea != null" >
+        addrArea = #{addrArea,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="addrZip != null" >
+        addrZip = #{addrZip,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null" >
+        mobilePhone = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="underwearSize != null" >
+        underwearSize = #{underwearSize,jdbcType=VARCHAR},
+      </if>
+      <if test="shoesSize != null" >
+        shoesSize = #{shoesSize,jdbcType=VARCHAR},
+      </if>
+      <if test="bootsSize != null" >
+        bootsSize = #{bootsSize,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorIp != null" >
+        creatorIp = #{creatorIp,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainer != null" >
+        maintainer = #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainDate != null" >
+        maintainDate = #{maintainDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainIp != null" >
+        maintainIp = #{maintainIp,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        userType = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        delFlag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userId = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="tw.tpe.com.nggf.common.model.dataobject.UserDo" >
+    update user
+    set userName = #{userName,jdbcType=VARCHAR},
+      userDesc = #{userDesc,jdbcType=VARCHAR},
+      photoUrl = #{photoUrl,jdbcType=VARCHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      personalId = #{personalId,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      gender = #{gender,jdbcType=VARCHAR},
+      fbEMail = #{fbEMail,jdbcType=VARCHAR},
+      reserveEmail = #{reserveEmail,jdbcType=VARCHAR},
+      telCountry = #{telCountry,jdbcType=VARCHAR},
+      telArea = #{telArea,jdbcType=VARCHAR},
+      telNo = #{telNo,jdbcType=VARCHAR},
+      telExt = #{telExt,jdbcType=VARCHAR},
+      addrCity = #{addrCity,jdbcType=VARCHAR},
+      addrArea = #{addrArea,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      addrZip = #{addrZip,jdbcType=VARCHAR},
+      mobilePhone = #{mobilePhone,jdbcType=VARCHAR},
+      underwearSize = #{underwearSize,jdbcType=VARCHAR},
+      shoesSize = #{shoesSize,jdbcType=VARCHAR},
+      bootsSize = #{bootsSize,jdbcType=VARCHAR},
+      creator = #{creator,jdbcType=VARCHAR},
+      createDate = #{createDate,jdbcType=TIMESTAMP},
+      creatorIp = #{creatorIp,jdbcType=VARCHAR},
+      maintainer = #{maintainer,jdbcType=VARCHAR},
+      maintainDate = #{maintainDate,jdbcType=TIMESTAMP},
+      maintainIp = #{maintainIp,jdbcType=VARCHAR},
+      userType = #{userType,jdbcType=VARCHAR},
+      delFlag = #{delFlag,jdbcType=VARCHAR}
+    where userId = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>

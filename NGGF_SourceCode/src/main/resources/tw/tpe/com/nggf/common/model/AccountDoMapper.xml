@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="account" >
+  <resultMap id="BaseResultMap" type="tw.tpe.com.nggf.common.model.dataobject.AccountDo" >
+    <id column="accId" property="accId" jdbcType="VARCHAR" />
+    <result column="accPwd" property="accPwd" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="eMail" property="eMail" jdbcType="VARCHAR" />
+    <result column="userId" property="userId" jdbcType="VARCHAR" />
+    <result column="roleId" property="roleId" jdbcType="DECIMAL" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="creatorIp" property="creatorIp" jdbcType="VARCHAR" />
+    <result column="maintainer" property="maintainer" jdbcType="VARCHAR" />
+    <result column="maintainDate" property="maintainDate" jdbcType="TIMESTAMP" />
+    <result column="maintainIp" property="maintainIp" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    accId, accPwd, name, birthday, gender, eMail, userId, roleId, creator, createDate, 
+    creatorIp, maintainer, maintainDate, maintainIp
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from account
+    where accId = #{accId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from account
+    where accId = #{accId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="tw.tpe.com.nggf.common.model.dataobject.AccountDo" >
+    insert into account (accId, accPwd, name, 
+      birthday, gender, eMail, 
+      userId, roleId, creator, 
+      createDate, creatorIp, maintainer, 
+      maintainDate, maintainIp)
+    values (#{accId,jdbcType=VARCHAR}, #{accPwd,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=TIMESTAMP}, #{gender,jdbcType=VARCHAR}, #{eMail,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{roleId,jdbcType=DECIMAL}, #{creator,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{creatorIp,jdbcType=VARCHAR}, #{maintainer,jdbcType=VARCHAR}, 
+      #{maintainDate,jdbcType=TIMESTAMP}, #{maintainIp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="tw.tpe.com.nggf.common.model.dataobject.AccountDo" >
+    insert into account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="accId != null" >
+        accId,
+      </if>
+      <if test="accPwd != null" >
+        accPwd,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="eMail != null" >
+        eMail,
+      </if>
+      <if test="userId != null" >
+        userId,
+      </if>
+      <if test="roleId != null" >
+        roleId,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="createDate != null" >
+        createDate,
+      </if>
+      <if test="creatorIp != null" >
+        creatorIp,
+      </if>
+      <if test="maintainer != null" >
+        maintainer,
+      </if>
+      <if test="maintainDate != null" >
+        maintainDate,
+      </if>
+      <if test="maintainIp != null" >
+        maintainIp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="accId != null" >
+        #{accId,jdbcType=VARCHAR},
+      </if>
+      <if test="accPwd != null" >
+        #{accPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        #{roleId,jdbcType=DECIMAL},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorIp != null" >
+        #{creatorIp,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainer != null" >
+        #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainDate != null" >
+        #{maintainDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainIp != null" >
+        #{maintainIp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="tw.tpe.com.nggf.common.model.dataobject.AccountDo" >
+    update account
+    <set >
+      <if test="accPwd != null" >
+        accPwd = #{accPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        eMail = #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        userId = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        roleId = #{roleId,jdbcType=DECIMAL},
+      </if>
+      <if test="creator != null" >
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorIp != null" >
+        creatorIp = #{creatorIp,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainer != null" >
+        maintainer = #{maintainer,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainDate != null" >
+        maintainDate = #{maintainDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maintainIp != null" >
+        maintainIp = #{maintainIp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where accId = #{accId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="tw.tpe.com.nggf.common.model.dataobject.AccountDo" >
+    update account
+    set accPwd = #{accPwd,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      gender = #{gender,jdbcType=VARCHAR},
+      eMail = #{eMail,jdbcType=VARCHAR},
+      userId = #{userId,jdbcType=VARCHAR},
+      roleId = #{roleId,jdbcType=DECIMAL},
+      creator = #{creator,jdbcType=VARCHAR},
+      createDate = #{createDate,jdbcType=TIMESTAMP},
+      creatorIp = #{creatorIp,jdbcType=VARCHAR},
+      maintainer = #{maintainer,jdbcType=VARCHAR},
+      maintainDate = #{maintainDate,jdbcType=TIMESTAMP},
+      maintainIp = #{maintainIp,jdbcType=VARCHAR}
+    where accId = #{accId,jdbcType=VARCHAR}
+  </update>
+</mapper>

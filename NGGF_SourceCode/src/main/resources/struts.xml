@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.action.excludePattern" value="/ActionServiceServlet*,/genbc*"/>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.custom.i18n.resources" value="nii_i18n" />
+	<constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default, json-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<!-- 攔截器設定 -->
+        <interceptors>
+            <!-- 攔截器用來印出Action的開始和結束 -->
+            <interceptor name="authorityInterceptor" class="tw.tpe.com.nggf.sso.interceptor.AuthorityInterceptor" />
+            <!-- 攔截器用來trim掉String的前後空白 -->
+    		<interceptor name="trimInterceptor" class="tw.tpe.com.nggf.sso.interceptor.TrimInterceptor" />
+    		
+            <!-- 自訂攔截器組 -->
+            <interceptor-stack name="appStack">
+                <interceptor-ref name="authorityInterceptor" />
+                <interceptor-ref name="trimInterceptor" />
+                <!-- struts2自身攔截器 -->
+                <interceptor-ref name="defaultStack">
+                    <param name="params.excludeParams">dojo\..*,^struts\..*,^d-\d+-[nops]$,^.+ms2side__[ds]x$</param>
+                </interceptor-ref>
+                <interceptor-ref name="timer" />
+            </interceptor-stack>
+        </interceptors>
+
+        <!-- 全區域interceptor設定  -->
+        <default-interceptor-ref name="appStack" />
+		
+		<default-action-ref name="login" />
+
+        <global-results>
+          	<result name="login">/login.jsp</result>
+			<result type="tiles" name="index">index</result>
+			<result type="tiles" name="error">error</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+		<action name="login">
+			<result>/login.jsp</result>
+		</action>
+		<action name="index" class="tw.tpe.com.nggf.common.action.BackHomePageAction">
+			<result type="tiles" name="success">index</result>
+		</action>
+		<!-- 系統登出 -->
+		<action name="LogoutAction" class="tw.tpe.com.nggf.sso.action.LogoutAction" />
+        <!-- 系統登入 -->
+		<action name="LoginAction" class="tw.tpe.com.nggf.sso.action.LoginAction">
+			<result type="tiles" name="success">index</result>
+		</action>
+    </package>
+
+    <!-- Add packages here -->
+    <include file="conf/modules/registry/registry.xml"/>
+    <include file="conf/modules/user/user.xml"/>
+    <include file="conf/modules/godGenerals/godGenerals.xml"/>
+    <include file="conf/modules/activity/activity.xml"/>
+</struts>

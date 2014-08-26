@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="godGeneralsAdd" extends="imm.classic">
+		<put-attribute name="body" value="/pages/godGenerals/godGeneralsAdd.jsp" />
+	</definition>
+	<definition name="godGeneralsQuery" extends="imm.classic">
+		<put-attribute name="body" value="/pages/godGenerals/godGeneralsQuery.jsp" />
+	</definition>
+	<definition name="godGeneralsQueryList" extends="imm.classic">
+		<put-attribute name="body" value="/pages/godGenerals/godGeneralsQueryList.jsp" />
+	</definition>
+	<definition name="godGeneralsQueryView" extends="imm.classic">
+		<put-attribute name="body" value="/pages/godGenerals/godGeneralsQueryView.jsp" />
+	</definition>
+	<definition name="godGeneralsEdit" extends="imm.classic">
+		<put-attribute name="body" value="/pages/godGenerals/godGeneralsEdit.jsp" />
+	</definition>
+</tiles-definitions>

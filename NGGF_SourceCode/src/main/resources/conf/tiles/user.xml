@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="userAdd" extends="imm.classic">
+		<put-attribute name="body" value="/pages/user/userAdd.jsp" />
+	</definition>
+	<definition name="userQuery" extends="imm.classic">
+		<put-attribute name="body" value="/pages/user/userQuery.jsp" />
+	</definition>
+	<definition name="userQueryList" extends="imm.classic">
+		<put-attribute name="body" value="/pages/user/userQueryList.jsp" />
+	</definition>
+	<definition name="userQueryView" extends="imm.classic">
+		<put-attribute name="body" value="/pages/user/userQueryView.jsp" />
+	</definition>
+	<definition name="userEdit" extends="imm.classic">
+		<put-attribute name="body" value="/pages/user/userEdit.jsp" />
+	</definition>
+	
+</tiles-definitions>

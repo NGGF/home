@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="Activity" namespace="/Activity" extends="default">
+        <action name="ActivityAdd" class="tw.tpe.com.nggf.activity.action.ActivityAction">
+            <result type="tiles" name="activityDateAdd">activityDateAdd</result>
+            <result type="tiles" name="activityAdd">activityAdd</result>
+            <result name="querygeneralsList" type="json">
+        		<param name="root">generalsDoList</param>
+        	</result>
+        	<result name="queryUserList" type="json">
+        		<param name="root">userDoList</param>
+        	</result>
+        </action>
+        <action name="NoteCard" class="tw.tpe.com.nggf.activity.action.NoteCardAction">
+            <result type="tiles" name="success">activityNoteCard</result>
+        </action>
+    </package>
+</struts>

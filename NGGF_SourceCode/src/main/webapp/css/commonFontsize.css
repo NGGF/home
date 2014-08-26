@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+body{font-size:0.8em;}
+
+h5 , .btn_go, .cleardefault,
+input.text, .layout, .footer 
+{font-size:1em;}
+
+h2, h3 {font-size:1.25em;}
+
+h4{font-size: 1.05em;}
+
+.btnlog{font-size:0.9em;}
+
+.leftbg .menu li a, .form .rowTb th.colPanel, .form ul.list li em{font-size: 1.2em;}
+
+.leftbg .menu li li li li a, .form{font-size:1.05em;}
+
+.catalog li, .catalog_view li, .catalog_view h3{{ font-size:1.1em; }
+
+.catalog li li, .catalog_view li li{ font-size:0.8em; }
